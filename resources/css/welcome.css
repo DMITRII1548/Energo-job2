@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Marmelad&display=swap');
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+h1, p, a, button{
+    font-family: "Marmelad", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+main{
+    background: url(/imgs/welcome/wrapper.png)no-repeat center;
+    height: auto;
+    margin: 0 350px;
+}
+
+header{
+    margin: 10px 223px 10px 386px;
+}
+
+.header_flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a{
+    font-size: 24px;
+    text-decoration: none;
+    color: white;
+    -webkit-text-stroke:  2px black;
+    padding: 0 18px;
+}
+
+.more button{
+    color: white;
+    border: none;
+    background-color: #ff852d;
+    border-radius: 7px;
+    width: 235px;
+    height: 75px;
+    cursor: pointer;
+    transition: 1s;
+    position: absolute;
+    margin: 542px 550px;
+}
+
+.info_message, .info_message2{
+    position: absolute;
+    background-color: rgb( 132, 42, 132, 86%);
+    width: 431.35px;
+    height: auto;
+    border-radius: 62px 0 62px 62px;
+}
+
+.info_message{
+    margin: 192px -120px;
+}
+
+.info_message2{
+    margin: 398px 589px;
+}
+
+.text h1{
+    color: white;
+    margin: 23px 70px;
+}
+
+
+button:hover{
+    background-color: #ff7818;
+}
+
+footer{
+    width: 100%;
+    height: 109px;
+    background-color: #8D2A8B;
+}
