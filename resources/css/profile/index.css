@@ -21,18 +21,22 @@ body {
     top: 0;
 }
 
-.header_txt {
-    font-size: 15px;
-    font-weight: 400;
-    padding: 12px 25px;
-    border: 2px solid;
-    border-radius: 5px;
-}
-
 .header_link{
     transition: 0.8s;
 }
 
+.auth-button{
+    width: 130px;
+    height: 50px;
+    border-radius: 8px;
+    border: 2px solid black;
+    font-size: 17px;
+    background-color: transparent;
+}
+
+.auth-button a{
+    color: black;
+}
 
 
 .active {
