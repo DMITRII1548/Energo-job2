@@ -32,6 +32,7 @@
 
             @else
             <div class="header_link">
+                <button class="register-button"><a href="{{ route('auth.register') }}">Регистрация</a></button>
                 <button class="auth-button"><a href="{{ route('auth.login') }}">Войти</a></button>
             </div>
             @endif

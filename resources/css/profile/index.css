@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: "Inter", sans-serif;
     font-weight: 700;
-    background-color: #fafafa   ;
+    background-color: #ededed;
 }
 
 .header {
@@ -12,10 +12,9 @@ body {
     justify-content: space-between;
     width: 100%;
     height: 100px;
-    background-color: #B59A81;
-    border-bottom: 4px solid #DAC290;
-    box-shadow: 0px 11px 6.6px rgba(0, 0, 0, 0.25);
-    padding: 1px 42px;
+    background-color: #fffbf7;
+    box-shadow: -2px -2px 20px rgba(0, 0, 0, 0.25);
+    padding: 1px 250px;
     align-items: center;
     z-index: 9999;
     top: 0;
@@ -29,12 +28,42 @@ body {
     width: 130px;
     height: 50px;
     border-radius: 8px;
-    border: 2px solid black;
     font-size: 17px;
     background-color: transparent;
+    transition: ease-out 0.5s;
+    letter-spacing: 3px;
+    border: none;
+}
+
+.auth-button:hover{
+    box-shadow: inset 0 -100px 0 0 #d99a55;
+}
+
+.auth-button:hover a{
+    color: white;
 }
 
 .auth-button a{
+    color: black;
+}
+
+.register-button{
+    width: 200px;
+    height: 50px;
+    border-radius: 8px;
+    font-size: 17px;
+    background-color: transparent;
+    transition: ease-out 0.5s;
+    letter-spacing: 3px;
+    border: none;
+}
+
+.register-button:hover{
+    box-shadow: inset 0 100px 0 0 #ead2a0;
+}
+
+
+.register-button a{
     color: black;
 }
 
@@ -66,12 +95,12 @@ aside{
 nav {
     width: 337px;
     height: auto;
-    background-color: #B59A81;
-    border: 4px solid #DAC290;
-    box-shadow: 7px 11px 6.6px rgba(0, 0, 0, 0.25);
+    box-shadow: 1px 4px 12px rgb(193 183 183 / 25%);
     border-radius: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
+    margin-left: 110px;
+
 }
 
 .nav_btns {
@@ -123,9 +152,7 @@ ol {
  
 }
 
-.nav_btns:hover {
-    scale: 1.1;
-}
+
 
 .cart {
     display: grid;
@@ -185,9 +212,7 @@ ol {
     transition: 0.4s;
 }
 
-.work-link:hover {
-    scale: 0.9;
-}
+
 
 .work-whatstapp {
     display: flex;
@@ -205,9 +230,6 @@ ol {
     color: black;
 }
 
-.work-whatstapp:hover {
-    scale: 0.9;
-}
 
 .cart_container{
     box-sizing: border-box;
