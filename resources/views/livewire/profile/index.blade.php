@@ -13,7 +13,7 @@
                         <button class="dropdown__button__lang">Выберете Профессию</button>
                         <ul class="dropdown__list__lang">
                             @foreach ($parentProfessions as $parentProf )
-                                <li wire:click="sortByParentProfession($parentProf->id)" class="dropdown__list-item__lang" data-value="option">{{ $parentProf->title }}</li>
+                                <li wire:click="sortByParentProfession({{ $parentProf->id }})" class="dropdown__list-item__lang" data-value="option">{{ $parentProf->title }}</li>
                             @endforeach
                         </ul>
                         <input type="text" name="select-category" value="" class="dropdown__input-hidden">

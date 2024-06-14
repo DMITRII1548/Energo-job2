@@ -34,15 +34,25 @@ class Index extends Component
 
     public function sortByParentProfession(ParentProfession $profession)
     {
-        // $this->profiles = $profession->professions()->profiles->where('is_published', true);
+        $this->profiles = $profession->professions();
         $this->professions = $profession->professions;
+        $this->profiles = null;
+
+        $this->profiles = $this->professions->each(function (Profession $prof) {
+            $profs = $prof->profiles->where('is_published', true)->get()->load(['user']);
+
+            if ($this->profiles) {
+                $this->profiles->append($profs);
+            } else {
+                $this->profiles = $profs;
+            }
+        });
     }
 
     #[Layout('layouts.main')]
     public function render(): View
     {
         return view('livewire.profile.index', [
-            'professions' => $this->professions,
             'parentProfessions' => ParentProfession::all()
         ]);
     }
