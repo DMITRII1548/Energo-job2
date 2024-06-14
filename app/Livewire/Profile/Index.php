@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Profile;
 
+use App\Models\ParentProfession;
 use App\Models\Profession;
 use App\Models\Profile;
 use Illuminate\Contracts\View\View;
@@ -12,10 +13,13 @@ use Livewire\Component;
 class Index extends Component
 {
     public $profiles;
+    public $professions;
     public ?int $activeProfessionId = null;
+    public ?int $activeParentProfessionId = null;
 
     public function mount(): void
     {
+        $this->professions = Profession::all();
         $this->profiles = Profile::query()
             ->where('is_published', true)
             ->get()
@@ -28,11 +32,18 @@ class Index extends Component
         $this->profiles = $profession->profiles->where('is_published', true);
     }
 
+    public function sortByParentProfession(ParentProfession $profession)
+    {
+        // $this->profiles = $profession->professions()->profiles->where('is_published', true);
+        $this->professions = $profession->professions;
+    }
+
     #[Layout('layouts.main')]
     public function render(): View
     {
         return view('livewire.profile.index', [
-            'professions' => Profession::all()
+            'professions' => $this->professions,
+            'parentProfessions' => ParentProfession::all()
         ]);
     }
 }
