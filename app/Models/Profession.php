@@ -12,7 +12,8 @@ class Profession extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title'
+        'title',
+        'parent_profession_id'
     ];
 
     public function profiles(): BelongsToMany
