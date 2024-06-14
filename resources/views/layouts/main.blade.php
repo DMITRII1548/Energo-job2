@@ -32,7 +32,7 @@
 
             @else
             <div class="header_link">
-                <a href="{{ route('auth.login') }}" class="header_txt">Войти</a>
+                <button class=""><a href="{{ route('auth.login') }}" class="header_txt">Войти</a></button>
             </div>
             @endif
         </div>
