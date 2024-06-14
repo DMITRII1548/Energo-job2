@@ -15,6 +15,7 @@ export default defineConfig({
                 'resources/css/auth/verify-email.css',
 
                 'resources/css/profile/index.css',
+                'resources/js/dropdown.js',
                 'resources/css/profile/update_or_create.css'
             ],
             refresh: true,
