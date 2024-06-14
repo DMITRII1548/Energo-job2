@@ -30,6 +30,18 @@
                     </div>
 
                     <div class="form-group">
+                        <select wire:model="form.parent_profession_id" data-placeholder="Выберети теги" class="form-control select2" style="width: 100%;">
+                          <option>Выберете профессию</option>
+                          @foreach ($parentProfessions as $profession)
+                            <option value="{{ $profession->id }}">{{ $profession->title }}</option>
+                          @endforeach
+                        </select>
+                        @error('form.parent_profession_id')
+                            <p class="text-danger">{{ $message }}</p>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
                         <button class="btn btn-primary" type="submit">Обновить</button>
                     </div>
                 </form>             
