@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Profession extends Model
@@ -11,7 +12,8 @@ class Profession extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title'
+        'title',
+        'parent_profession_id'
     ];
 
     public function profiles(): BelongsToMany
@@ -19,8 +21,8 @@ class Profession extends Model
         return $this->belongsToMany(Profile::class, 'profession_profile');
     }
 
-    public function parentProfession(): BelongsToMany   
+    public function parentProfession(): BelongsTo   
     {
-        return $this->belongsToMany(Profession::class,'');
+        return $this->belongsTo(Profession::class,'');
     }
 }

@@ -1,32 +1,28 @@
 <?php
 
-namespace App\Livewire\Admin\Profession;
+namespace App\Livewire\Admin\ParentProfession;
 
-use App\Livewire\Forms\Admin\Profession\UpdateForm;
+use App\Livewire\Forms\Admin\ParentProfession\UpdateForm;
 use App\Models\ParentProfession;
-use App\Models\Profession;
 use Illuminate\Contracts\View\View;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 
 class Edit extends Component
 {
-    public Profession $profession;
-    public $parentProfessions;
+    public ParentProfession $profession;
 
     public UpdateForm $form;
 
     public function mount(): void
     {
-        $this->parentProfessions = ParentProfession::all();
         $this->form->title = $this->profession->title;
-        $this->form->parent_profession_id = $this->profession->parent_profession_id;
     }
 
     #[Layout('layouts.admin.main')]
     public function render(): View
     {
-        return view('livewire.admin.profession.edit');
+        return view('livewire.admin.parent-profession.edit');
     }
 
     public function update(): void
@@ -35,6 +31,6 @@ class Edit extends Component
 
         $this->profession->update($data);
 
-        $this->redirect(route('admin.professions.index'));
+        $this->redirect(route('admin.parent-professions.index'));
     }
 }

@@ -84,6 +84,12 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
         Route::get('/create', \App\Livewire\Admin\Profession\Create::class)->name('admin.professions.create');
         Route::get('/{profession}/edit', \App\Livewire\Admin\Profession\Edit::class)->name('admin.professions.edit');
     });
+
+    Route::prefix('parent-professions')->group(function () {
+        Route::get('/', \App\Livewire\Admin\ParentProfession\Index::class)->name('admin.parent-professions.index');
+        Route::get('/create', \App\Livewire\Admin\ParentProfession\Create::class)->name('admin.parent-professions.create');
+        Route::get('/{profession}/edit', \App\Livewire\Admin\ParentProfession\Edit::class)->name('admin.parent-professions.edit');
+    });
 });
 
 Route::prefix('profiles')->group(function () {

@@ -4,7 +4,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">Изменить Профессию</h1>
+              <h1 class="m-0">Добавить родительскую профессию</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
@@ -21,7 +21,7 @@
           <!-- Small boxes (Stat box) -->
           <div class="row">
             <div class="col-12">
-                <form wire:submit="update" method="POST">
+                <form wire:submit="store" method="POST">
                     <div class="form-group">
                         <input wire:model="form.title" type="text" name="title" placeholder="Наименование" class="form-control" required>
                         @error('form.title')
@@ -30,19 +30,7 @@
                     </div>
 
                     <div class="form-group">
-                        <select wire:model="form.parent_profession_id" data-placeholder="Выберети теги" class="form-control select2" style="width: 100%;">
-                          <option>Выберете профессию</option>
-                          @foreach ($parentProfessions as $profession)
-                            <option value="{{ $profession->id }}">{{ $profession->title }}</option>
-                          @endforeach
-                        </select>
-                        @error('form.parent_profession_id')
-                            <p class="text-danger">{{ $message }}</p>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                        <button class="btn btn-primary" type="submit">Обновить</button>
+                        <button class="btn btn-primary" type="submit">Добавить</button>
                     </div>
                 </form>             
             </div>
@@ -54,4 +42,4 @@
         </div><!-- /.container-fluid -->
       </section>
       <!-- /.content -->
-</div>
+<div>

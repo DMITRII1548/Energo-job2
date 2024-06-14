@@ -8,6 +8,22 @@
                 @foreach($professions as $profession)
                     <li><a wire:click="sortByProfession({{ $profession->id }})" class="nav_btns {{ $activeProfessionId === $profession->id ? ' active' : '' }}">{{ $profession->title }}</a></li>
                 @endforeach
+                <div class="form-group__lang">
+                    <div class="dropdown__lang">
+                        <button class="dropdown__button__lang">Выберете Профессию</button>
+                        <ul class="dropdown__list__lang">
+                            @foreach ($parentProfessions as $parentProf )
+                                <li wire:click="sortByParentProfession($parentProf->id)" class="dropdown__list-item__lang" data-value="option">{{ $parentProf->title }}</li>
+                            @endforeach
+                        </ul>
+                        <input type="text" name="select-category" value="" class="dropdown__input-hidden">
+                    </div>
+                </div>
+                <ol class="profession-ol">
+                    @foreach($professions as $profession)
+                        <li><div wire:click="sortByProfession({{ $profession->id }})" class="nav_btns {{ $activeProfessionId === $profession->id ? ' active' : '' }}">{{ $profession->title }}</div></li>
+                    @endforeach
+                </ol>
             </ol>
         </nav>
     </aside>
@@ -33,4 +49,6 @@
             </div>
         @endforeach
     </div>
+    
+    @vite(['resources/js/dropdown.js'])
 </div>

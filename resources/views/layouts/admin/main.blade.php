@@ -135,6 +135,14 @@
                 </a>
             </li>
             <li>
+                <a href="{{ route('admin.parent-professions.index') }}" class="nav-link">
+                <i class="fas fa-user-tie"></i>
+                    <p class="ml-1">
+                        Родительские профессии
+                    </p>
+                </a>
+            </li>
+            <li>
                 <a href="{{ route('admin.professions.index') }}" class="nav-link">
                 <i class="fas fa-user-tie"></i>
                     <p class="ml-1">
