@@ -115,7 +115,7 @@ class UpdateOrCreate extends Component
         ]);
 
         $profile->update([
-            'is_published' => false
+            'is_published' => true
         ]);
 
         $this->isCreatedOrUpdated = true;

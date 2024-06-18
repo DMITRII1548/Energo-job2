@@ -18,13 +18,13 @@ class ProfileFactory extends Factory
      */
     public function definition(): array
     {
-        $imageFile = UploadedFile::fake()->image($this->faker->word . '.jpg', 250, 250);
-        $imageFilePath = Storage::disk('public')->put('images', $imageFile);
+        // $imageFile = UploadedFile::fake()->image($this->faker->word . '.jpg', 250, 250);
+        // $imageFilePath = Storage::disk('public')->put('images', $imageFile);
 
         return [
             'expirience' => fake()->text(),
             'portfolio' => fake()->url(),
-            'avatar' => $imageFilePath
+            'avatar' => 'test'
         ];
     }
 }

@@ -17,7 +17,8 @@ class ProfessionFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->word()
+            'title' => fake()->word(),
+            'parent_profession_id' =>  random_int(1, 3),
         ];
     }
 }
