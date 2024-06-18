@@ -57,27 +57,37 @@
                     <input type="text" required="required" wire:model="form.name">
                     <span>Имя, Фамилия</span>
                 </div>
-                <p class="danger">Ошибка</p>
+                @error('form.name')
+                    <p class="danger">{{ $message }}</p>
+                @enderror
                 <div class="inputBox">
                     <input type="email" required="required" wire:model="form.email">
                     <span>Почта</span>
                 </div>
-                <p class="danger">Ошибка</p>
+                @error('form.email')
+                    <p class="danger">{{ $message }}</p>
+                @enderror
                 <div class="inputBox">
                     <input type="tel" required="required" wire:model="form.phonenumber">
                     <span>Телефон</span>
                 </div>
-                <p class="danger">Ошибка</p>
+                @error('form.phonenumber')
+                    <p class="danger">{{ $message }}</p>
+                @enderror
                 <div class="inputBox">
                     <input type="password" required="required" wire:model="form.password">
                     <span>Пароль</span>
                 </div>
-                <p class="danger">Ошибка</p>
+                @error('form.password')
+                    <p class="danger">{{ $message }}</p>
+                @enderror
                 <div class="inputBox">
                     <input type="password" required="required" wire:model="form.password_confirmation">
                     <span>Подтвердить</span>
                 </div>
-                <p class="danger">Ошибка</p>
+                @error('form.password_confirmation')
+                    <p class="danger">{{ $message }}</p>
+                @enderror
                 <div class="btn2">
                     <button class="btn3" type="submit">Регистрация</button>
                 </div>
