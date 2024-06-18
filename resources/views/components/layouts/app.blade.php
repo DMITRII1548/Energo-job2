@@ -11,9 +11,7 @@
             <a href="{{ route('profiles.index') }}" class="header_logo">
                 <img src="{{ asset('/imgs/logo.png') }}" class="logo_img">
             </a>
-            <div class="header_link">
-                <a href="{{ route('profiles.index') }}" class="header_txt">На главную</a>
-            </div>
+            <button class="auth-button"><a href="{{ route('profiles.index') }}">На главную</a></button>
         </div>
 
         {{ $slot }}

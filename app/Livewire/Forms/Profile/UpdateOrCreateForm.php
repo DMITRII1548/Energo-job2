@@ -14,7 +14,7 @@ class UpdateOrCreateForm extends Form
     public $phonenumber = '';
 
     #[Validate('required|string|max:255')]
-    public $expirience = '';
+    public $expirience = 'Нет';
 
     #[Validate('nullable|string|max:255')]
     public $portfolio = '';
