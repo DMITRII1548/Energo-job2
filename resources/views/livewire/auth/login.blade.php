@@ -41,10 +41,13 @@
                     <input type="email" required="required" class="qwerty" wire:model="form.email">
                     <span class="qwe">Почта</span>
                 </div>
+                <p class="danger">Ошибка</p>
                 <div class="inputBox">
                     <input type="password" required="required" wire:model="form.password">
                     <span>Пароль</span>
                 </div>
+                <p class="danger">Ошибка</p>
+
                 <div class="btn">
                     <button type="submit" class="btn1">Войти</button>
                 </div>
