@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('profiles', function (Blueprint $table) {
-            $table->boolean('is_published')->default(0);
+            $table->boolean('is_published')->default(1);
         });
     }
 

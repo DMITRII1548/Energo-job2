@@ -34,19 +34,23 @@ class Index extends Component
 
     public function sortByParentProfession(ParentProfession $profession)
     {
+        $this->activeProfessionId = null;
+        
         $this->profiles = $profession->professions();
         $this->professions = $profession->professions;
         $this->profiles = null;
 
-        $this->profiles = $this->professions->each(function (Profession $prof) {
-            $profs = $prof->profiles->where('is_published', true)->get()->load(['user']);
+        $this->professions->each(function (Profession $prof) {
+            $profiles = $prof->profiles();
+            $profiles = $profiles->where('is_published', true)->get()->load(['user']);
 
-            if ($this->profiles) {
-                $this->profiles->append($profs);
+            if ($this->profiles && $this->profiles->isNotEmpty()) {
+                $this->profiles->append($profiles);
             } else {
-                $this->profiles = $profs;
+                $this->profiles = $profiles;
             }
         });
+
     }
 
     #[Layout('layouts.main')]
