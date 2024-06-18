@@ -16,7 +16,6 @@
                     <a href="{{ route('profiles.index') }}" id="btn12">На главную</a>
                 </div>
             </div>
-            
         </div>
     </div>
     <div id="baner2" class="none">
@@ -89,7 +88,7 @@
                     <p class="danger">{{ $message }}</p>
                 @enderror
                 <div class="btn2">
-                    <button class="btn3" type="submit">Регистрация</button>
+                    <button class="btn3" type="submit">Зарегистрироваться</button>
                 </div>
             </div>
         </form>
