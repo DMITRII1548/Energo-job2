@@ -96,7 +96,7 @@
                 @enderror
 
                 @if($isCreatedOrUpdated)
-                    <p>Ваш профиль на проверке</p>
+                    <p>Ваш профиль сохранен</p>
                 @endif
                 <div class="confirm">
                     <button type="submit" class="btn4">подтвердить</button>
