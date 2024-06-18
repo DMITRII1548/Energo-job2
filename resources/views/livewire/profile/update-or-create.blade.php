@@ -83,7 +83,7 @@
                         </div>
 
                         <label for="skills" class="btn3 btn-label">Добавить</label>
-                        <select class="btn3" id="skills" wire:model="skill" wire:change="addSkill">
+                        <select class="selector_btn" id="skills" wire:model="skill" wire:change="addSkill">
                             <option id="defSkillOption" disabled selected>Добавить</option>
                             @foreach ($skills as $skill)
                                 <option value="{{ $skill->id }}">{{ $skill->title }}</option>
@@ -103,16 +103,5 @@
                 </div>
             </div>
         </div>
-    </form>
-    {{-- @script
-    <script>
-        const image = document.getElementById("avatar")
-        input = document.getElementById("avatar_paste")
-
-        input.addEventListener("change", () => {
-            image.src = URL.createObjectURL(input.files[0])
-            image.style.zIndex = '2';
-        });
-    </script>
-    @endscript --}}
+</form> 
 </div>
