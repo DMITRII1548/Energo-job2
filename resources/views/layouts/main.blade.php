@@ -17,16 +17,16 @@
             </div>
             <div style="display: flex; align-items:center; gap: 30px">
                 @if (auth()->user()->hasRole('admin'))
-                    <div class="header_link">
-                        <a href="{{ route('admin.users.index') }}" class="admin_panel">Админ панель</a>
+                    <div class="auth-button">
+                        <a href="{{ route('admin.users.index') }}" class="">Админ панель</a>
                     </div>
                 @endif
-                <div class="header_link">
-                    <a href="{{ route('profiles.update_or_create') }}" class="profile_menu">Профиль</a>
+                <div class="auth-button">
+                    <a href="{{ route('profiles.update_or_create') }}" class="">Профиль</a>
                 </div>
                 <form action="{{ route('auth.logout') }}" method="post" class="header_link">
                     @csrf
-                    <button type="submit" class="exit_profile">Выйти</button>
+                    <button type="submit" class="auth-button">Выйти</button>
                 </form>
             </div>
 
