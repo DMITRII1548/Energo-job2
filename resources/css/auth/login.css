@@ -26,6 +26,9 @@ body{
 
 .danger{
     color: red;
+    max-width: 400px;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 
