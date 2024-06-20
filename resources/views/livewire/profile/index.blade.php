@@ -40,7 +40,7 @@
                         </div>
                         <div class="cart-bottom">
                             <a target="_blank" href="{{ $profile->portfolio }}" class="work-link">Список работ</a>
-                            <a href="{{ auth()->user() ? ('https://wa.me/' . $profile->user->phonenumber) : route('auth.login') }}" target="_blank" class="work-whatstapp">
+                            <a href="{{ 'https://wa.me/' . $profile->user->phonenumber }}" target="_blank" class="work-whatstapp">
                                 <img src="{{ asset('imgs/profile/index/whatsapp.png') }}" alt="">
                                 <span>{{ $profile->user->phonenumber }}</span>
                             </a>
