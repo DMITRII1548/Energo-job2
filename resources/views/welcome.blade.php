@@ -12,7 +12,6 @@
             <div class="header_flex">
                 <a href="/"><img src="{{asset ('imgs/welcome/logo.jpg')}}" alt=""></a>
                 <nav>
-                    <a href="/">Главная</a>
                     <a href="{{ route('profiles.index') }}">Фриланс</a>
                     <a href="{{ route('auth.login') }}">Войти</a>
                     <a href="{{ route('auth.register') }}">Регистрация</a>
@@ -34,7 +33,7 @@
                     </div>
                 </div>
                 <div class="more">
-                    <a href="{{ route('profiles.index') }}"><button>Подробне...</button></a>
+                    <a href="{{ route('profiles.index') }}"><button>Подробнее...</button></a>
                 </div>
             </div>
         </section>
