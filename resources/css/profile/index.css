@@ -114,7 +114,9 @@ nav {
 
 .nav_btns {
     width: 250px;
-    height: 50px;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border-radius: 8px;
     background-color: #EEE3CB;
     display: flex;
@@ -319,7 +321,7 @@ ol {
     margin: 0;
     padding: 0;
     list-style-type: none;
-    background-color: white;
+    background-color: #eee3cb;
     overflow: hidden;
     border-radius: 10px;
     width: 265px;
