@@ -178,7 +178,6 @@ ol {
     box-sizing: border-box;
     padding: 19px;
     font-size: 20px;
-    box-shadow: 7px 11px 6.6px rgba(0, 0, 0, 0.25);
 }
 
 .cart-top {
@@ -189,9 +188,9 @@ ol {
 
 .cart-img {
     width: 90px;
-    height: 92px;
+    height: 90px;
     border-radius: 50%;
-    border: 2px solid black;
+    border: 1px solid black;
 }
 
 .cart-list {
@@ -274,7 +273,7 @@ ol {
 
 .cart-item{
     line-height: 1.2;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 

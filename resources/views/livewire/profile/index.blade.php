@@ -35,7 +35,8 @@
                             <ul class="cart-list">
                                 <li class="cart-item">{{ $profile->user->name }}</li>
                                 <li class="cart-item">Опыт работы : {{ $profile->expirience }}</li>
-                                <li class="cart-item">Навыки : @foreach($profile->skills as $skill) {{ $skill->title . ' ' }} @endforeach</li>
+                                <li class="cart-item">Профессия : @foreach($profile->professions as $profession) {{ $profession->title . ', ' }} @endforeach</li>
+                                <li class="cart-item">Навыки : @foreach($profile->skills as $skill) {{ $skill->title . ', ' }} @endforeach</li>
                             </ul>
                         </div>
                         <div class="cart-bottom">
