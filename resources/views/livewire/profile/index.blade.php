@@ -35,12 +35,13 @@
                             <ul class="cart-list">
                                 <li class="cart-item">{{ $profile->user->name }}</li>
                                 <li class="cart-item">Опыт работы : {{ $profile->expirience }}</li>
-                                <li class="cart-item">Навыки : @foreach($profile->skills as $skill) {{ $skill->title . ' ' }} @endforeach</li>
+                                <li class="cart-item">Профессия : @foreach($profile->professions as $profession) {{ $profession->title . ', ' }} @endforeach</li>
+                                <li class="cart-item">Навыки : @foreach($profile->skills as $skill) {{ $skill->title . ', ' }} @endforeach</li>
                             </ul>
                         </div>
                         <div class="cart-bottom">
                             <a target="_blank" href="{{ $profile->portfolio }}" class="work-link">Список работ</a>
-                            <a href="{{ auth()->user() ? ('https://wa.me/' . $profile->user->phonenumber) : route('auth.login') }}" target="_blank" class="work-whatstapp">
+                            <a href="{{ 'https://wa.me/' . $profile->user->phonenumber }}" target="_blank" class="work-whatstapp">
                                 <img src="{{ asset('imgs/profile/index/whatsapp.png') }}" alt="">
                                 <span>{{ $profile->user->phonenumber }}</span>
                             </a>
