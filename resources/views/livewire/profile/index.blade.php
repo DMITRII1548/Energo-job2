@@ -26,7 +26,7 @@
     </aside>
 
     <div class="cart_container">
-        @if($profiles->isNotEmpty())
+        @if($profiles && $profiles->isNotEmpty())
             @foreach($profiles as $profile)
                 @if($profile && $profile->user)
                     <div class="cart">
