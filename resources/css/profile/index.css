@@ -174,7 +174,7 @@ ol {
     width: 420px;
     height: 252px;
     background-color: #9babb8;
-    border-radius: 0 30px 30px 30px;
+    border-radius: 8px;
     box-sizing: border-box;
     padding: 19px;
     font-size: 20px;
