@@ -24,10 +24,8 @@ body{
 }
 
 .header_txt {
-    display: inline;
-    margin-top: 8px;
-    line-height: 1;
-    color: #000;
+    border: none;
+    background-color: red;
 }
 
 .header__txt:hover {

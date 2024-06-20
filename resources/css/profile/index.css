@@ -77,12 +77,6 @@ body {
 }
 
 
-.active {
-    opacity: 0.5;
-    scale: 1.05;
-}
-
-
 .logo_img {
     width: 100px;
     height: 100px;
@@ -114,17 +108,22 @@ nav {
 }
 
 .nav_btns {
-    width: 270px;
+    width: 250px;
     height: 50px;
-    background-color: #E3D5C7;
-    border: 4px solid #DAC290;
-    border-radius: 30px;
+    border-radius: 8px;
+    background-color: #EEE3CB;
     display: flex;
+    cursor: pointer;
+    font-weight: 400;
+    letter-spacing: 2px;
     justify-content: center;
     align-items: center;
-    transition: .5s;
-    text-transform: uppercase;
     color: black;
+    transition: 0.5s ease-in;
+}
+
+.active{
+    box-shadow: inset 4px 2px 20px #a59e8f, inset -4px -2px 20px #f3e8d0;
 }
 
 ol {
