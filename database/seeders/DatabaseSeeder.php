@@ -19,11 +19,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\User::where('email', 'admin@gmail.com')->first()->update([
-            'password' => Hash::make('admin12345678')
-            ])
-        // 
-        //\App\Models\User::factory(1)->create();
+        \App\Models\User::create([
+            'email' => 'admin@gmail.com',
+            'password' => Hash::make('12345678'),
+            
+        ]);
+        
+        // \App\Models\User::factory(1)->create();
 
         // $user = \App\Models\User::factory()->create([
         //     'name' => 'Test User',
@@ -38,7 +40,7 @@ class DatabaseSeeder extends Seeder
         // $user->roles()->sync([$role->id]);
 
         // $skills = Skill::factory(23)->create();
-        // $professoins = Profession::factory(10)->create();
+        // $professoins = Profession::all();
         // $users = User::factory(200)->create();
 
         // $users->each(function (User $user) {

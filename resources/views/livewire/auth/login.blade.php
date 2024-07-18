@@ -36,15 +36,22 @@
     </div>
         <div class="log">
             <form class="log1" wire:submit="login">
-                <h1>Войти</h1>
+                <h1>Вход</h1>
                 <div class="inputBox">
                     <input type="email" required="required" class="qwerty" wire:model="form.email">
                     <span class="qwe">Почта</span>
                 </div>
+                @error('form.email')
+                    <p class="danger">{{ $message }}</p>
+                @enderror
                 <div class="inputBox">
                     <input type="password" required="required" wire:model="form.password">
                     <span>Пароль</span>
                 </div>
+                @error('form.password')
+                    <p class="danger">{{ $message }}</p>
+                @enderror
+
                 <div class="btn">
                     <button type="submit" class="btn1">Войти</button>
                 </div>

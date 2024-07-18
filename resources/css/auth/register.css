@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 *{
     margin: 0;
     padding: 0;
+    font-family: "Open Sans", sans-serif;
 }
 
 a{
@@ -10,7 +13,7 @@ a{
 body{
     width: 100vh;
     height: 100vh;
-    background-color: #E3D5C7;
+    background-color: #ededed;
     display: flex;
     align-items: center;
     font-family: "Inter", sans-serif;
@@ -35,7 +38,6 @@ body{
     background-color: white;
     border-radius: 25px;
 
-    border: 4px solid #DAC290;
     box-shadow: 7px 11px 6.6px rgba(0, 0, 0, 0.25);
 }
 
@@ -58,6 +60,8 @@ body{
 h1{
     text-align: center;
     margin-bottom: 40px;
+    font-weight: 300;
+    letter-spacing: 3px;
 }
 
 .inputBox{
@@ -91,7 +95,8 @@ input:focus{
     padding-left: 5px;
     padding-right: 5px;
     margin-left: 10px;
-    margin-top: -50px;
+    margin-top: -54px;
+    font-weight: 400;
 }
 
 span{
@@ -110,9 +115,6 @@ button{
     height: 43px;
 }
 
-.btn:hover{
-    scale: 1.1;
-}
 
 .btn1{
     padding: 10px;
@@ -122,23 +124,30 @@ button{
 }
 
 .btn2{
-    margin: auto;
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
-    transition: 0.3s;
-    width: 119px;
-    height: 43px;
-}
-
-
-.btn2:hover{
-    scale: 1.1;
 }
 
 .btn3{
-    padding: 10px;
-    border-radius: 10px;
-    font-weight: 800;
-    background: none;
+    border: none;
+    width: 200px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #DEBA9D;
+    transition: 0.5s ease-out;
+    font-size: 17px;
+}
+
+.btn3:hover{
+    box-shadow: inset 0 -100px 0 0 #F5E8C7;
+}
+
+.danger{
+    color: red;
+    max-width: 400px;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 
@@ -209,31 +218,24 @@ label:active:after {
 }
 
 #btn8{
-    border: 3px solid white;
-    border-radius: 25px;
     background-color: #E3D5C7;
-    padding: 5px;
-    padding-left: 30px;
-    padding-right: 30px;
-    font-size: 30px;
-    transition: 0.5s;
-    border: 4px solid #DAC290;
+    border: none;
+    width: 85px;
+    height: 40px;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 1s ease-out;
 }
 
 #btn8:hover{
-    scale: 1.1;
+    box-shadow: inset -220px 0 0 0 #F5E8C7;
 }
 
 #btn10{
-    border: 3px solid white;
     border-radius: 25px;
     background-color: #E3D5C7;
-    padding: 5px;
-    padding-left: 30px;
-    padding-right: 30px;
     font-size: 30px;
     transition: 0.5s;
-    border: 4px solid #DAC290;
 }
 
 .btn11{
@@ -248,7 +250,6 @@ label:active:after {
 
 #btn12{
     color: black;
-    border: 3px solid white;
     border-radius: 25px;
     background-color: #E3D5C7;
     padding: 5px;
@@ -256,12 +257,13 @@ label:active:after {
     padding-right: 30px;
     font-size: 15px;
     transition: 0.5s;
-    border: 4px solid #DAC290;
 }
 
-.btn11:hover{
+#btn12:hover{
     scale: 1.1;
 }
+
+
 
 input:focus + span{
     color: #725f4d;
@@ -272,7 +274,7 @@ input:focus + span{
 #baner{
     width: 500px;
     height: 600px;
-    background-color: #B59A81;
+    background-color: #9BABB8;
     border-radius: 25px;
     position: absolute;
     z-index: 99;
@@ -280,15 +282,18 @@ input:focus + span{
     text-align: center;
     display: flex;
     font-size: 20px;
-    border: 4px solid #DAC290;
-    margin-top: -4px;
-    margin-left: -4px;
-    box-shadow: 11px 0px 6.6px rgba(0, 0, 0, 0.25);
+    box-shadow: -5px 4px 6.6px rgba(0, 0, 0, 0.25);
 }
 
 .aba{
     margin-top: 200px;
     
+}
+
+.aba a {
+    font-weight: 400;
+    color: white;
+    font-size: 17px;
 }
 
 #baner2{
@@ -302,9 +307,6 @@ input:focus + span{
     text-align: center;
     display: flex;
     font-size: 20px;
-    border: 4px solid #DAC290;
-    margin-top: -4px;
-    margin-left: -4px;
     box-shadow: 11px 0px 6.6px rgba(0, 0, 0, 0.25);
 }
 

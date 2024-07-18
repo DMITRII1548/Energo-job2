@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 *{
     margin: 0;
     padding: 0;
+    font-family: "Open Sans", sans-serif;
 }
 
 a{
@@ -10,16 +13,24 @@ a{
 body{
     width: 100vh;
     height: 100vh;
-    background-color: #E3D5C7;
+    background-color: #ededed;
     display: flex;
     align-items: center;
-    font-family: "Inter", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: 700;
 }
 
 .box{
     box-shadow: 23px 27px 33.9px black;
 }
+
+.danger{
+    color: red;
+    max-width: 400px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
 
 .bg{
     width: 1000px;
@@ -35,7 +46,6 @@ body{
     background-color: white;
     border-radius: 25px;
 
-    border: 4px solid #DAC290;
     box-shadow: 7px 11px 6.6px rgba(0, 0, 0, 0.25);
 }
 
@@ -58,6 +68,8 @@ body{
 h1{
     text-align: center;
     margin-bottom: 40px;
+    font-weight: 300;
+    letter-spacing: 3px;
 }
 
 .inputBox{
@@ -91,7 +103,8 @@ input:focus{
     padding-left: 5px;
     padding-right: 5px;
     margin-left: 10px;
-    margin-top: -50px;
+    margin-top: -54px;
+    font-weight: 400;
 }
 
 span{
@@ -103,22 +116,26 @@ button{
 }
 
 .btn{
-    margin: auto;
-    margin-top: 20px;
-    transition: 0.3s;
-    width: 69px;
-    height: 43px;
-}
-
-.btn:hover{
-    scale: 1.1;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 }
 
 .btn1{
-    padding: 10px;
-    border-radius: 10px;
-    font-weight: 800;
-    background: none;
+    border-radius: 8px;
+    border: none;
+    width: 150px;
+    height: 40px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: 17px;
+    background-color: #DEBA9D;
+    transition: 0.5s ease-out;
+}
+
+
+.btn1:hover{
+    box-shadow: inset 0 -100px 0 0 #F5E8C7;
 }
 
 .btn2{
@@ -158,6 +175,12 @@ button{
     margin-left: 20px;
     margin-top: 5px;
     width: 110px;
+}
+
+.aba a {
+    font-weight: 400;
+    color: white;
+    font-size: 17px;
 }
 
 .switch-btn[type=checkbox]{
@@ -209,7 +232,6 @@ label:active:after {
 }
 
 #btn8{
-    border: 3px solid white;
     border-radius: 25px;
     background-color: #E3D5C7;
     padding: 5px;
@@ -217,23 +239,23 @@ label:active:after {
     padding-right: 30px;
     font-size: 30px;
     transition: 0.5s;
-    border: 4px solid #DAC290;
 }
 
-#btn8:hover{
-    scale: 1.1;
-}
 
 #btn10{
-    border: 3px solid white;
-    border-radius: 25px;
+    border-radius: 8px;
+    border: none;
     background-color: #E3D5C7;
-    padding: 5px;
-    padding-left: 30px;
-    padding-right: 30px;
-    font-size: 30px;
-    transition: 0.5s;
-    border: 4px solid #DAC290;
+    font-size: 16px;
+    width: 220px;
+    height: 50px;
+    color: #000;
+    font-weight: 400;
+    transition: 1s ease-out;
+}
+
+#btn10:hover{
+    box-shadow: inset 220px 0 0 0 #F5E8C7;
 }
 
 .btn11{
@@ -248,7 +270,6 @@ label:active:after {
 
 #btn12{
     color: black;
-    border: 3px solid white;
     border-radius: 25px;
     background-color: #E3D5C7;
     padding: 5px;
@@ -256,7 +277,6 @@ label:active:after {
     padding-right: 30px;
     font-size: 15px;
     transition: 0.5s;
-    border: 4px solid #DAC290;
 }
 
 .btn11:hover{
@@ -272,7 +292,6 @@ input:focus + span{
 #baner{
     width: 500px;
     height: 600px;
-    background-color: #B59A81;
     border-radius: 25px;
     position: absolute;
     z-index: 99;
@@ -280,22 +299,17 @@ input:focus + span{
     text-align: center;
     display: flex;
     font-size: 20px;
-    border: 4px solid #DAC290;
-    margin-top: -4px;
-    margin-left: -4px;
     box-shadow: 11px 0px 6.6px rgba(0, 0, 0, 0.25);
-    right: 0;
 }
 
 .aba{
     margin-top: 200px;
-    
 }
 
 #baner2{
     width: 500px;
     height: 600px;
-    background-color: #B59A81;
+    background-color: #9BABB8;
     border-radius: 25px;
     position: absolute;
     z-index: 99;
@@ -303,9 +317,6 @@ input:focus + span{
     text-align: center;
     display: flex;
     font-size: 20px;
-    border: 4px solid #DAC290;
-    margin-top: -4px;
-    margin-left: -4px;
     box-shadow: 11px 0px 6.6px rgba(0, 0, 0, 0.25);
     right: 0;
 }
