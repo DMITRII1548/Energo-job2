@@ -3,6 +3,7 @@
 namespace App\Livewire\Profile;
 
 use App\Livewire\Forms\Profile\UpdateOrCreateForm;
+use App\Models\Gallery;
 use App\Models\Profession;
 use App\Models\Skill;
 use App\Models\User;
@@ -27,6 +28,9 @@ class UpdateOrCreate extends Component
 
     public $selectedSkills = [];
     public $selectedProfessions = [];
+    public $gallery;
+
+    public $galleries = [];
 
     public UpdateOrCreateForm $form;
 
@@ -50,6 +54,8 @@ class UpdateOrCreate extends Component
                 $this->selectedProfessionsIds[] = $profession->id;
                 $this->selectedProfessions[] = $profession;
             }
+
+            $this->galleries = $user->profile->galleries;
         }
     }
 
@@ -57,7 +63,8 @@ class UpdateOrCreate extends Component
     {
         return view('livewire.profile.update-or-create', [
             'professions' => Profession::all(),
-            'skills' => Skill::all()
+            'skills' => Skill::all(),
+            'galleries' => $this->galleries,
         ]);
     }
 
@@ -118,6 +125,15 @@ class UpdateOrCreate extends Component
             'is_published' => true
         ]);
 
+        if ($this->gallery) {
+            foreach ($this->gallery as $gal) {
+                $galPath = $gal->store(path: 'images');
+
+                $gallery = new Gallery(['image' => $galPath]);
+                $profile->galleries()->save($gallery);;
+            }
+        }
+
         $this->isCreatedOrUpdated = true;
     }
 
@@ -170,5 +186,17 @@ class UpdateOrCreate extends Component
                 break;
             }
         }
+    }
+
+    public function destroyGallery(int $id): void
+    {
+        $gallery = Gallery::find($id);
+
+        Storage::disk('public')->delete($gallery->image);
+        $gallery->delete();
+
+        $user = User::find(Auth::user()->id);
+
+        $this->galleries = $user->profile->galleries;
     }
 }

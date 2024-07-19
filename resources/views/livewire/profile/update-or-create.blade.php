@@ -95,6 +95,25 @@
                     <p>{{ $message }}</p>
                 @enderror
 
+                <div class="gallery">
+                    <label for="gallery">Загрузите фото ваших дипломов и сертификатов подтверждающих вашу квалификацию:</label><br>
+                    <input type="file" id="gallery" wire:model="gallery" accept="image/*" multiple>
+                </div>
+
+                <div class="galleries">
+                    @if ($galleries)
+                        @foreach ($galleries as $gallery)
+                        <div class="galleries__img">
+                            <img src="{{ $gallery->imageSrc }}">
+                            <div class="cross-gal" wire:click="destroyGallery({{ $gallery->id }})">
+
+                            </div>
+                        </div>
+
+                        @endforeach
+                    @endif
+                </div>
+
                 @if($isCreatedOrUpdated)
                     <p>Ваш профиль сохранен</p>
                 @endif
@@ -103,5 +122,5 @@
                 </div>
             </div>
         </div>
-</form> 
+</form>
 </div>
