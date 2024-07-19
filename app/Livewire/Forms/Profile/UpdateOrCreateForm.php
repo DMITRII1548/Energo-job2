@@ -19,10 +19,11 @@ class UpdateOrCreateForm extends Form
     #[Validate('nullable|string|max:255')]
     public $portfolio = '';
 
+    #[Validate('nullable|string|max:255')]
+    public $skills = '';
+
     #[Validate('nullable|image')]
     public $avatar = null;
-
-    public $skills;
 
     public $professions;
 }

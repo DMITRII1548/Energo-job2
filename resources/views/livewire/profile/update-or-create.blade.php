@@ -45,6 +45,11 @@
                         @error('form.portfolio')
                             <p>{{ $message }}</p>
                         @enderror
+
+                        <input wire:model="form.skills" type="text" placeholder="Ваши навыки">
+                        @error('form.skills')
+                            <p>{{ $message }}</p>
+                        @enderror
                     </div>
                 </div>
 

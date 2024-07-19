@@ -16,7 +16,8 @@ class Profile extends Model
         'expirience',
         'portfolio',
         'avatar',
-        'is_published'
+        'is_published',
+        'skills'
     ];
 
     public function getAvatarUrlAttribute(): string

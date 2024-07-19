@@ -60,11 +60,7 @@
                                     </td>
 
                                     <td>
-                                        <ul>
-                                            @foreach ($user->profile->skills as $skill)
-                                                <li>{{ $skill->title }}</li>
-                                            @endforeach
-                                        <ul>
+                                        {{ $user->profile->skills }}
                                     </td>
 
                                     <td>
@@ -74,7 +70,7 @@
                                             <button wire:click="changeStatus({{ $user->id }})" class="btn btn-danger">Снять с публикации</button>
                                         @endif
                                     </td>
-                                @else 
+                                @else
                                     <td></td>
                                     <td></td>
                                     <td></td>

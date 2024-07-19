@@ -39,6 +39,7 @@ class UpdateOrCreate extends Component
         if ($user->profile) {
             $this->form->expirience = $user->profile->expirience;
             $this->form->portfolio = $user->profile->portfolio;
+            $this->form->skills = $user->profile->skills;
 
 
             foreach ($user->profile->professions as $profession) {
@@ -77,13 +78,15 @@ class UpdateOrCreate extends Component
         if ($user->profile) {
             $user->profile->update([
                 'expirience' => $data['expirience'],
-                'portfolio' => $data['portfolio']
+                'portfolio' => $data['portfolio'],
+                'skills' => $data['skills'],
             ]);
         } else {
 
             $profile = $user->profile()->create([
                 'expirience' => $data['expirience'],
-                'portfolio' => $data['portfolio']
+                'portfolio' => $data['portfolio'],
+                'skills' => $data['skills'],
             ]);
         }
 
