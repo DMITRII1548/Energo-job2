@@ -5,7 +5,6 @@ namespace App\Livewire\Profile;
 use App\Livewire\Forms\Profile\UpdateOrCreateForm;
 use App\Models\Gallery;
 use App\Models\Profession;
-use App\Models\Skill;
 use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
@@ -17,16 +16,12 @@ use Livewire\WithFileUploads;
 class UpdateOrCreate extends Component
 {
     use WithFileUploads;
-
-    public array $selectedSkillIds = [];
     public array $selectedProfessionsIds = [];
 
     public bool $isCreatedOrUpdated = false;
 
-    public int $skill;
     public int $profession;
 
-    public $selectedSkills = [];
     public $selectedProfessions = [];
     public $gallery;
 
@@ -45,10 +40,6 @@ class UpdateOrCreate extends Component
             $this->form->expirience = $user->profile->expirience;
             $this->form->portfolio = $user->profile->portfolio;
 
-            foreach ($user->profile->skills as $skill) {
-                $this->selectedSkillIds[] = $skill->id;
-                $this->selectedSkills[] = $skill;
-            }
 
             foreach ($user->profile->professions as $profession) {
                 $this->selectedProfessionsIds[] = $profession->id;
@@ -63,7 +54,6 @@ class UpdateOrCreate extends Component
     {
         return view('livewire.profile.update-or-create', [
             'professions' => Profession::all(),
-            'skills' => Skill::all(),
             'galleries' => $this->galleries,
         ]);
     }
@@ -76,11 +66,6 @@ class UpdateOrCreate extends Component
 
         if (empty($this->selectedProfessionsIds)) {
             $this->form->addError('professions', 'Нужно выбрать как минимум одну профессию');
-            return;
-        }
-
-        if (empty($this->selectedSkillIds)) {
-            $this->form->addError('skills', 'Нужно выбрать как минимум один навык');
             return;
         }
 
@@ -114,7 +99,6 @@ class UpdateOrCreate extends Component
                 ]);
         }
 
-        $profile->skills()->sync($this->selectedSkillIds);
         $profile->professions()->sync($this->selectedProfessionsIds);
 
         $user->update([
@@ -137,16 +121,6 @@ class UpdateOrCreate extends Component
         $this->isCreatedOrUpdated = true;
     }
 
-    public function addSkill(): void
-    {
-        $id = $this->skill;
-
-        if (!in_array($id, $this->selectedSkillIds)) {
-            $this->selectedSkillIds[] = $id;
-            $this->selectedSkills[] = Skill::find($id);
-        }
-    }
-
     public function addProfession(): void
     {
         $id = $this->profession;
@@ -157,21 +131,6 @@ class UpdateOrCreate extends Component
         }
     }
 
-    public function destroySkill(int $id): void
-    {
-        $skillIdKey = array_search($id, $this->selectedSkillIds);
-
-        if (is_int($skillIdKey)) {
-            unset($this->selectedSkillIds[$skillIdKey]);
-        }
-
-        foreach ($this->selectedSkills as $key => $skill) {
-            if ($skill->id === $id) {
-                unset($this->selectedSkills[$key]);
-                break;
-            }
-        }
-    }
 
     public function destroyProfession(int $id): void
     {

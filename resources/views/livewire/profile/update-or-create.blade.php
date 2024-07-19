@@ -72,29 +72,6 @@
                     <p>{{ $message }}</p>
                 @enderror
 
-                <div class="skills">
-                    <!-- Add product with livewire dont forget -->
-                    <div class="padding">
-                        <div class="cards" id="skillsCards">
-                            <a>Навыки:</a>
-                            @foreach ($selectedSkills as $skill)
-                                <span wire:click="destroySkill({{ $skill->id }})" class="card"> {{ $skill->title }} <div class="cross"></div> </span>
-                            @endforeach
-                        </div>
-
-                        <label for="skills" class="btn3 btn-label">Добавить</label>
-                        <select class="selector_btn" id="skills" wire:model="skill" wire:change="addSkill">
-                            <option id="defSkillOption" disabled selected>Добавить</option>
-                            @foreach ($skills as $skill)
-                                <option value="{{ $skill->id }}">{{ $skill->title }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-                @error('form.skills')
-                    <p>{{ $message }}</p>
-                @enderror
-
                 <div class="gallery">
                     <label for="gallery">Загрузите фото ваших дипломов и сертификатов подтверждающих вашу квалификацию:</label><br>
                     <input type="file" id="gallery" wire:model="gallery" accept="image/*" multiple>

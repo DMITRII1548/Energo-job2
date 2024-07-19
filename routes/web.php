@@ -73,12 +73,6 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
         Route::get('/', \App\Livewire\Admin\User\Index::class)->name('admin.users.index');
     });
 
-    Route::prefix('skills')->group(function () {
-        Route::get('/', \App\Livewire\Admin\Skill\Index::class)->name('admin.skills.index');
-        Route::get('/create', \App\Livewire\Admin\Skill\Create::class)->name('admin.skills.create');
-        Route::get('/{skill}/edit', \App\Livewire\Admin\Skill\Edit::class)->name('admin.skills.edit');
-    });
-
     Route::prefix('professions')->group(function () {
         Route::get('/', \App\Livewire\Admin\Profession\Index::class)->name('admin.professions.index');
         Route::get('/create', \App\Livewire\Admin\Profession\Create::class)->name('admin.professions.create');

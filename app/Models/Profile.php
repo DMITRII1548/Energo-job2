@@ -28,10 +28,6 @@ class Profile extends Model
         return '';
     }
 
-    public function skills(): BelongsToMany
-    {
-        return $this->belongsToMany(Skill::class, 'profile_skill');
-    }
 
     public function professions(): BelongsToMany
     {
