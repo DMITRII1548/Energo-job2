@@ -3,8 +3,8 @@
 namespace App\Livewire\Profile;
 
 use App\Livewire\Forms\Profile\UpdateOrCreateForm;
+use App\Models\Gallery;
 use App\Models\Profession;
-use App\Models\Skill;
 use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
@@ -16,17 +16,16 @@ use Livewire\WithFileUploads;
 class UpdateOrCreate extends Component
 {
     use WithFileUploads;
-
-    public array $selectedSkillIds = [];
     public array $selectedProfessionsIds = [];
 
     public bool $isCreatedOrUpdated = false;
 
-    public int $skill;
     public int $profession;
 
-    public $selectedSkills = [];
     public $selectedProfessions = [];
+    public $gallery;
+
+    public $galleries = [];
 
     public UpdateOrCreateForm $form;
 
@@ -40,16 +39,15 @@ class UpdateOrCreate extends Component
         if ($user->profile) {
             $this->form->expirience = $user->profile->expirience;
             $this->form->portfolio = $user->profile->portfolio;
+            $this->form->skills = $user->profile->skills;
 
-            foreach ($user->profile->skills as $skill) {
-                $this->selectedSkillIds[] = $skill->id;
-                $this->selectedSkills[] = $skill;
-            }
 
             foreach ($user->profile->professions as $profession) {
                 $this->selectedProfessionsIds[] = $profession->id;
                 $this->selectedProfessions[] = $profession;
             }
+
+            $this->galleries = $user->profile->galleries;
         }
     }
 
@@ -57,7 +55,7 @@ class UpdateOrCreate extends Component
     {
         return view('livewire.profile.update-or-create', [
             'professions' => Profession::all(),
-            'skills' => Skill::all()
+            'galleries' => $this->galleries,
         ]);
     }
 
@@ -72,11 +70,6 @@ class UpdateOrCreate extends Component
             return;
         }
 
-        if (empty($this->selectedSkillIds)) {
-            $this->form->addError('skills', 'Нужно выбрать как минимум один навык');
-            return;
-        }
-
         $user->update([
             'name' => $data['name'],
             'phonenumber' => $data['phonenumber'],
@@ -85,13 +78,15 @@ class UpdateOrCreate extends Component
         if ($user->profile) {
             $user->profile->update([
                 'expirience' => $data['expirience'],
-                'portfolio' => $data['portfolio']
+                'portfolio' => $data['portfolio'],
+                'skills' => $data['skills'],
             ]);
         } else {
 
             $profile = $user->profile()->create([
                 'expirience' => $data['expirience'],
-                'portfolio' => $data['portfolio']
+                'portfolio' => $data['portfolio'],
+                'skills' => $data['skills'],
             ]);
         }
 
@@ -107,7 +102,6 @@ class UpdateOrCreate extends Component
                 ]);
         }
 
-        $profile->skills()->sync($this->selectedSkillIds);
         $profile->professions()->sync($this->selectedProfessionsIds);
 
         $user->update([
@@ -118,17 +112,16 @@ class UpdateOrCreate extends Component
             'is_published' => true
         ]);
 
-        $this->isCreatedOrUpdated = true;
-    }
+        if ($this->gallery) {
+            foreach ($this->gallery as $gal) {
+                $galPath = $gal->store(path: 'images');
 
-    public function addSkill(): void
-    {
-        $id = $this->skill;
-
-        if (!in_array($id, $this->selectedSkillIds)) {
-            $this->selectedSkillIds[] = $id;
-            $this->selectedSkills[] = Skill::find($id);
+                $gallery = new Gallery(['image' => $galPath]);
+                $profile->galleries()->save($gallery);;
+            }
         }
+
+        $this->isCreatedOrUpdated = true;
     }
 
     public function addProfession(): void
@@ -141,21 +134,6 @@ class UpdateOrCreate extends Component
         }
     }
 
-    public function destroySkill(int $id): void
-    {
-        $skillIdKey = array_search($id, $this->selectedSkillIds);
-
-        if (is_int($skillIdKey)) {
-            unset($this->selectedSkillIds[$skillIdKey]);
-        }
-
-        foreach ($this->selectedSkills as $key => $skill) {
-            if ($skill->id === $id) {
-                unset($this->selectedSkills[$key]);
-                break;
-            }
-        }
-    }
 
     public function destroyProfession(int $id): void
     {
@@ -170,5 +148,17 @@ class UpdateOrCreate extends Component
                 break;
             }
         }
+    }
+
+    public function destroyGallery(int $id): void
+    {
+        $gallery = Gallery::find($id);
+
+        Storage::disk('public')->delete($gallery->image);
+        $gallery->delete();
+
+        $user = User::find(Auth::user()->id);
+
+        $this->galleries = $user->profile->galleries;
     }
 }

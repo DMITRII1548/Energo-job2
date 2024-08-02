@@ -127,14 +127,6 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('admin.skills.index') }}" class="nav-link">
-                    <i class="fas fa-cogs"></i>
-                    <p class="ml-1">
-                        Навыки
-                    </p>
-                </a>
-            </li>
-            <li>
                 <a href="{{ route('admin.parent-professions.index') }}" class="nav-link">
                 <i class="fas fa-user-tie"></i>
                     <p class="ml-1">

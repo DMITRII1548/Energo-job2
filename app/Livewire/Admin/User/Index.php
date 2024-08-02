@@ -36,14 +36,13 @@ class Index extends Component
         $profile = $user->profile;
 
         if ($profile) {
-            $profile->skills()->detach();
             $profile->professions()->detach();
 
             if (isset($profile->avatar)) {
                 Storage::disk('public')->delete($profile->avatar);
             }
-            
-            
+
+
             $profile->delete();
         }
 
