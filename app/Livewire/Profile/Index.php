@@ -23,7 +23,7 @@ class Index extends Component
         $this->profiles = Profile::query()
             ->where('is_published', true)
             ->get()
-            ->load('user', 'skills');
+            ->load('user');
     }
 
     public function sortByProfession(Profession $profession)
@@ -35,7 +35,7 @@ class Index extends Component
     public function sortByParentProfession(ParentProfession $profession)
     {
         $this->activeProfessionId = null;
-        
+
         $this->profiles = $profession->professions();
         $this->professions = $profession->professions;
         $this->profiles = null;

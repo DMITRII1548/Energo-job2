@@ -36,7 +36,9 @@
                                 <li class="cart-item">{{ $profile->user->name }}</li>
                                 <li class="cart-item">Опыт работы : {{ $profile->expirience }}</li>
                                 <li class="cart-item">Профессия : @foreach($profile->professions as $profession) {{ $profession->title . ', ' }} @endforeach</li>
-                                <li class="cart-item">Навыки : @foreach($profile->skills as $skill) {{ $skill->title . ', ' }} @endforeach</li>
+                                @if($profile->skills)
+                                    <li class="cart-item">Навыки: {{ $profile->skills }}</li>
+                                @endif
                             </ul>
                         </div>
                         <div class="cart-bottom">
@@ -51,6 +53,6 @@
             @endforeach
         @endif
     </div>
-    
+
     @vite(['resources/js/dropdown.js'])
 </div>
