@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Marmelad&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #ededed;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h1, p, a, button{
+    font-family: "Marmelad", sans-serif;
+    font-weight: 400;   
+}
+
+label{
+    font-family: "Marmelad", sans-serif;
+    font-weight: 900;
+}
+
+.container{
+    padding: 0 250px;
+    margin: 85px auto;
+}
+
+.cart{
+    background-color: #9babb8;
+    width: 100%;
+    height: 900px;
+    border-radius: 12px;
+}
+
+.cart_flex{
+    display: flex;
+    justify-content: space-around;
+    padding: 98px 206px;
+}   
+
+.avatarka{
+    width: 200px;
+    height: 200px;
+   
+}
+
+.avatarka img{ 
+    width: 100%;
+    height: 100%;   
+    border-radius: 8px;
+}
+
+
+.profile-info{
+    width: 500px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}   
+
+.cart_number{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.cart_profisia{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart_description{
+    background-color: #ededed;
+    width: 500px;
+    height: auto;
+    border-radius: 7px;
+    border: 1px solid #8a9fa7;
+}
+
+.cart_description p{
+    margin: 20px 20px;
+}
+
+.cart_diplom{
+    background-color: #ededed;
+    width: 846px;
+    height: auto; 
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 7px;
+}
+
+.sertifikat{
+    width: 125px;
+    height: 100px;
+    margin: 10px 10px;
+    transition: 0.3s ease;
+}
+
+
+.sertifikat:hover{
+    transform: scale(6.5);
+}
