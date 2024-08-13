@@ -93,5 +93,8 @@ Route::prefix('profiles')->group(function () {
 
     Route::get('/', \App\Livewire\Profile\Index::class)
         ->name('profiles.index');
+
+    Route::get('/{profile}', \App\Livewire\Profile\Show::class)
+        ->name('profiles.show');
 });
 

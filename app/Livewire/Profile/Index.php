@@ -6,6 +6,7 @@ use App\Models\ParentProfession;
 use App\Models\Profession;
 use App\Models\Profile;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 

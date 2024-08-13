@@ -30,7 +30,7 @@
             @foreach($profiles as $profile)
                 @if($profile && $profile->user)
                     <div class="cart">
-                        <div class="cart-top">
+                        <a href="{{ route('profiles.show', $profile->id) }}" class="cart-top">
                             <img src="{{ !$profile->avatar ? asset('/imgs/profile/avatar.jpg') : $profile->avatarUrl }}" alt="" class="cart-img">
                             <ul class="cart-list">
                                 <li class="cart-item">{{ $profile->user->name }}</li>
@@ -40,7 +40,7 @@
                                     <li class="cart-item">Навыки: {{ $profile->skills }}</li>
                                 @endif
                             </ul>
-                        </div>
+                        </a>
                         <div class="cart-bottom">
                             <a target="_blank" href="{{ $profile->portfolio }}" class="work-link">Список работ</a>
                             <a href="{{ 'https://wa.me/' . $profile->user->phonenumber }}" target="_blank" class="work-whatstapp">
