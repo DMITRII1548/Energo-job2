@@ -1,0 +1,52 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-l0sNRNKZ.js",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/auth/login.css": {
+    "file": "assets/login-DJDefUlF.css",
+    "src": "resources/css/auth/login.css",
+    "isEntry": true
+  },
+  "resources/css/auth/register.css": {
+    "file": "assets/register-Bjl2-5Dz.css",
+    "src": "resources/css/auth/register.css",
+    "isEntry": true
+  },
+  "resources/css/auth/verify-email.css": {
+    "file": "assets/verify-email-CmsN9gMq.css",
+    "src": "resources/css/auth/verify-email.css",
+    "isEntry": true
+  },
+  "resources/css/profile/index.css": {
+    "file": "assets/index-OHHXO6zC.css",
+    "src": "resources/css/profile/index.css",
+    "isEntry": true
+  },
+  "resources/css/profile/profile-page.css": {
+    "file": "assets/profile-page-CtAD3Rcc.css",
+    "src": "resources/css/profile/profile-page.css",
+    "isEntry": true
+  },
+  "resources/css/profile/update_or_create.css": {
+    "file": "assets/update_or_create-FTBBnr9s.css",
+    "src": "resources/css/profile/update_or_create.css",
+    "isEntry": true
+  },
+  "resources/css/welcome.css": {
+    "file": "assets/welcome-C05saNoQ.css",
+    "src": "resources/css/welcome.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-CifqVuM1.js",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/dropdown.js": {
+    "file": "assets/dropdown-BbQn_BSy.js",
+    "src": "resources/js/dropdown.js",
+    "isEntry": true
+  }
+}
